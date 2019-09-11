@@ -1,6 +1,7 @@
-<div class="container">
-  <h1>ログイン</h1>
-  <%= form_with scope: :session, local: true do | f  |%>
+<div class="wrapper">
+  <h1 class="py-5 text-center">ログイン</h1>
+  <div class="container w-25">
+    <%= form_with scope: :session, local: true do | f  |%>
     <div class="form-group">
       <%= f.label :email, 'メールアドレス' %>
       <%= f.text_field :email, class: 'form-control', id: 'session_email' %>
@@ -9,6 +10,10 @@
       <%= f.label :password, 'パスワード' %>
       <%= f.password_field :password, class: 'form-control', id: 'session_password' %>
     </div>
-    <%= f.submit '登録する', class: 'btn btn-primary'%>
-  <% end %>
+    <div class="text-center">
+      <%= f.submit '登録する', class: 'btn btn-primary w-75'%>
+    </div>
+    <% end %>
+  </div>
 </div>
+<%= render partial: 'home/footer' %>

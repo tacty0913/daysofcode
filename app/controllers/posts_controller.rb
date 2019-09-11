@@ -36,6 +36,6 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params.require(:post).permit(:content)
+    params.require(:post).permit(:content, :html, :css, :javascript, :jquery, :ruby, :rails, :php, :java, :go, :python, :swift)
   end
 end

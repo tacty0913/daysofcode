@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_05_014500) do
+ActiveRecord::Schema.define(version: 2019_09_11_141122) do
 
   create_table "posts", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "html", default: 0, null: false
+    t.integer "css", default: 0, null: false
+    t.integer "javascript", default: 0, null: false
+    t.integer "jquery", default: 0, null: false
+    t.integer "ruby", default: 0, null: false
+    t.integer "rails", default: 0, null: false
+    t.integer "php", default: 0, null: false
+    t.integer "java", default: 0, null: false
+    t.integer "go", default: 0, null: false
+    t.integer "python", default: 0, null: false
+    t.integer "swift", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
