@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   skip_before_action :login_required
   
   def new
+    @user = User.new
   end
   
   def create
@@ -11,6 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to posts_path, notice: 'ログインしました'
     else
+      flash[:notice] = 'メールアドレスまたはパスワードが違います'
       render :new
     end
   end

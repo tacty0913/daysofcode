@@ -1,5 +1,10 @@
 <div class="wrapper">
-  <h1 class="py-5 text-center">ログイン</h1>
+  <h1 class="my-5 w-25 mx-auto text-center border-bottom">ログイン</h1>
+  <% if flash[:notice] %>
+   <div class="text-danger text-center mb-3" role="alert">
+     <%= flash[:notice] %>
+   </div>
+   <% end %>
   <div class="container w-25">
     <%= form_with scope: :session, local: true do | f  |%>
     <div class="form-group">
@@ -11,7 +16,7 @@
       <%= f.password_field :password, class: 'form-control', id: 'session_password' %>
     </div>
     <div class="text-center">
-      <%= f.submit '登録する', class: 'btn btn-primary w-75'%>
+      <%= f.submit 'ログイン', class: 'btn btn-primary w-75'%>
     </div>
     <% end %>
   </div>

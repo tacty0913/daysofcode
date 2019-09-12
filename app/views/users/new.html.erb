@@ -1,6 +1,15 @@
 <div class="wrapper">
   <div class='container'>
-    <h1 class="text-center mt-5 mb-4">新規登録</h1>
+    <h1 class="my-5 w-25 mx-auto text-center border-bottom">新規登録</h1>
+    <% if @user.errors.any? %>
+      <div class="text-danger  w-50 mx-auto">
+        <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <%= render partial: 'form'%>
   </div>
   <%= render partial: 'home/footer' %>
